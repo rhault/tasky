@@ -1,0 +1,21 @@
+.taskButton-container{
+  border: 3px dashed gray;
+  border-radius: 15px;
+  cursor: pointer;
+  grid-row-end: span 3;
+  position: relative;
+  min-height: 150px;
+}
+
+.taskButton-content{
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.taskButton-content p{
+  margin: 15px;
+  color: blue;
+}

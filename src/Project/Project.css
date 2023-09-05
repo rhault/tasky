@@ -1,0 +1,10 @@
+.project{
+    border-top: 1px solid rgba(148, 147, 147, 0.5);
+    border-bottom: 1px solid rgba(148, 147, 147, 0.5);
+    padding: 40px 20px 20px 20px;
+}
+
+.project li{
+    list-style: none;
+    margin: 40px 20px;
+}

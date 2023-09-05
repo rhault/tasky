@@ -1,0 +1,5 @@
+.done{fill:#008000}
+
+.icon-svg:hover .icon-delete{
+    fill: red;
+}

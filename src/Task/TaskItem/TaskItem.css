@@ -1,0 +1,75 @@
+.task-item{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 14px 0px #a9a5a5;
+    position: relative;
+}
+
+.task-item:hover .task-content .task-option {
+    display: block;
+}
+
+.task-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    margin: 20px;
+}
+
+.text-container .todo{
+    background-color: rgba(255, 127, 80, 0.11);
+    border-radius: 5px;
+    color: coral;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    padding: 3px 6px;
+}
+
+.text-container .completed{
+    background-color: rgba(0, 128, 0, 0.356);
+    border-radius: 5px;
+    color: #008000;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    padding: 3px 6px;
+}
+
+.task-more{
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    width: 20px;
+}
+
+.task-title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.task-text{
+    color: rgba(128, 128, 128, 0.568);
+    padding-bottom: 6px;
+    margin: 15px 0;
+}
+
+.task-team{
+    padding: 15px 0;
+}
+
+.task-option{
+    bottom: 10px;
+    display: none;
+    height: 30px;
+    position: absolute;
+    right: 50%;
+    width: 85%;
+    transform: translate(50%, 0);
+}
+
+.task-option button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}

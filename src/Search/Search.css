@@ -1,0 +1,24 @@
+.search span{
+    background-image: url('../icon/search.svg');
+    background-size: contain;
+    display: inline-block;
+    height: 24px;
+    margin-left: 50px;
+    vertical-align: bottom;
+    width: 24px;
+}
+
+.search input{
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.search input::placeholder{
+    color: rgba(128, 128, 128, 0.568);
+}
+
+.search input:focus{
+    outline: none;
+}
