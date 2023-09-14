@@ -4,7 +4,7 @@ import {CreateTaskButton} from './CreateTaskButton';
 function Task(props) {
   return (
     <div className='task'>    
-      <CreateTaskButton onCreate={props.onCreate}/>
+      <CreateTaskButton/>
       {props.children}
     </div> 
   ) 

@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import './Search.css';
+import { TaskContext } from '../App/TaskContext';
 
-function Search({searchValue, setSearchValue}) {
+function Search() {
+
+  const {searchValue, setSearchValue} = useContext(TaskContext)
 
   return (
     <div className='search'>

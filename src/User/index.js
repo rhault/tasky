@@ -2,8 +2,13 @@ import './User.css';
 import mail from '../icon/mail.svg';
 import notifications from '../icon/notifications.svg';
 import settings from '../icon/settings.svg';
+import { useContext } from 'react';
+import { TaskContext } from '../App/TaskContext';
 
-function User({taskAll, tasksCompleted, tasksPending}) {
+function User() {
+
+  const {taskAllLength, tasksCompleted, tasksPending} = useContext(TaskContext)
+
   return (
     <div className='user'>
       <span className='icon'>Ra</span>
@@ -28,7 +33,7 @@ function User({taskAll, tasksCompleted, tasksPending}) {
         <p className='subtitle'>task</p>
       </div>
       <div className='task-info'>
-        <p className='number'>{taskAll}</p>
+        <p className='number'>{taskAllLength}</p>
         <p className='title'>All</p>
         <p className='subtitle'>Completed</p>
       </div>

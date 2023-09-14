@@ -1,9 +1,13 @@
-import add from '../../icon/add.svg'
-import './CreateTaskButton.css'
+import { useContext } from 'react';
+import add from '../../icon/add.svg';
+import { TaskContext } from '../../App/TaskContext';
+import './CreateTaskButton.css';
 
-function CreateTaskButton(props) {
+function CreateTaskButton() {
+  const {handlerNewTask} = useContext(TaskContext); 
+
   return (
-    <div className='taskButton-container' onClick={props.onCreate}>
+    <div className='taskButton-container' onClick={handlerNewTask}>
       <span className='taskButton-content'>
         <img src={add} alt='add'/>
         <p>
