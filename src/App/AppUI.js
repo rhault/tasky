@@ -4,41 +4,37 @@ import {Team} from '../Team/Team'
 import {Task} from '../Task';
 import {Search} from '../Search';
 import { TaskItem } from '../Task/TaskItem';
+import { EditTask } from '../Task/EditTask';
+import { TaskContext } from './TaskContext';
+import { useContext } from 'react';
+import {Modal} from '../Modal'
 import './App.css';
 
-function AppUI({
-  tasksCompleted,
-  tasksPending,
-  taskAll,
-  searchValue,
-  setSearchValue,
-  handlerAddTasks,
-  handlerDeleteTask,
-  handlerTaskCompleted,
-  searched
-}){
+function AppUI(){
+  const {
+    taskAllLength,
+    handlerDeleteTask,
+    handlerTaskCompleted,
+    handlerEditTask,
+    searched,
+    openModalTask,
+  } = useContext(TaskContext)
+  
   return(
     <section className='container'>
       <section className='menu'>
         <div className='menu-title'>
           <p>Tasky</p>
         </div>
-        <User 
-          tasksCompleted={tasksCompleted}
-          tasksPending={tasksPending}
-          taskAll={taskAll}
-        />
+        <User/>
         <Project/>
         <Team/>
       </section>
       <section className='task-container'>
         <div className='task-header'>
-          <Search 
-            searchValue={searchValue} 
-            setSearchValue={setSearchValue}
-          />
+          <Search/>
         </div>
-        <Task onCreate = {handlerAddTasks}>
+        <Task>
           {searched.map((task, index) => { 
             return(            
               <TaskItem 
@@ -48,12 +44,18 @@ function AppUI({
                 completed = {task.completed} 
                 onCompleted = {() => {handlerTaskCompleted(index)}}
                 onDelete = {() => {handlerDeleteTask(index)}}
-                taskLenght = {taskAll}              
+                taskLenght = {taskAllLength}              
+                onEdit={() => {handlerEditTask(index)}}
               />
             )
           })}
         </Task>
       </section>
+      {openModalTask && 
+        <Modal>
+          <EditTask/>
+        </Modal>
+      }
     </section>
   )
 }
