@@ -1,0 +1,86 @@
+.modal .task-item{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 5px 5px 14px 0px #a9a5a5;
+  height: min-content;
+  margin-top: 50px;
+  max-height: 85%;
+  width: 600px;
+}
+
+.modal .task-item input{
+  border: none;
+  width: 100%;
+}
+
+.modal .task-item input:focus{
+  outline: none;
+}
+
+.modal .task-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin: 20px;
+  position: relative;
+}
+
+.modal .text-container .todo{
+    background-color: rgba(255, 127, 80, 0.11);
+    border-radius: 5px;
+    color: coral;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    padding: 3px 6px;
+}
+
+.modal .text-container .completed{
+    background-color: rgba(0, 128, 0, 0.356);
+    border-radius: 5px;
+    color: #008000;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    padding: 3px 6px;
+}
+
+.modal .task-more{
+  height: 20px;
+  position: absolute;
+  right: -6px;
+  width: 20px;
+}
+
+.modal .task-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.modal .task-text{
+    color: rgba(128, 128, 128, 0.568);
+    font-size: 1.1rem;
+    padding-bottom: 6px;
+    margin: 15px 0;
+}
+
+.modal .task-team{
+    padding: 15px 0 40px 0;
+}
+
+.modal .task-option{
+    bottom: 10px;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0);
+    width: 85%;
+}
+
+.modal .task-option button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
