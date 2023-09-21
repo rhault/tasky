@@ -3,8 +3,9 @@
   border-radius: 15px;
   cursor: pointer;
   grid-row-end: span 3;
-  position: relative;
+  font-size: 1.6rem;
   min-height: 150px;
+  position: relative;
 }
 
 .taskButton-content{
