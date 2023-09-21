@@ -42,7 +42,7 @@ function AppUI(){
                 title = {task.title}
                 text = {task.text}
                 completed = {task.completed} 
-                onCompleted = {() => {handlerTaskCompleted(index)}}
+                onCompleted = {() => {handlerTaskCompleted(task.key)}}
                 onDelete = {() => {handlerDeleteTask(index)}}
                 taskLenght = {taskAllLength}              
                 onEdit={() => {handlerEditTask(index)}}

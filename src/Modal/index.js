@@ -5,11 +5,11 @@ import './Modal.css';
 
 function Modal({children}){
 
-  const {handlerAddTask, updateTask} = useContext(TaskContext);  
+  const {handlerAddTask, task} = useContext(TaskContext);  
   const modalClose = ({target}) => {
     if(target.attributes.class){
       if(target.attributes.class.value === 'modal'){
-        handlerAddTask(updateTask.key)
+        handlerAddTask(task.key)
       }
     }
   }

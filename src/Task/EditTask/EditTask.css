@@ -8,15 +8,6 @@
   width: 600px;
 }
 
-.modal .task-item input{
-  border: none;
-  width: 100%;
-}
-
-.modal .task-item input:focus{
-  outline: none;
-}
-
 .modal .task-content{
   display: flex;
   flex-direction: column;
@@ -25,22 +16,28 @@
   position: relative;
 }
 
+.modal .text-container .status{
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 3px 6px;
+}
+
 .modal .text-container .todo{
-    background-color: rgba(255, 127, 80, 0.11);
-    border-radius: 5px;
-    color: coral;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    padding: 3px 6px;
+  background-color: rgba(255, 127, 80, 0.11);
+  color: coral;
 }
 
 .modal .text-container .completed{
-    background-color: rgba(0, 128, 0, 0.356);
-    border-radius: 5px;
-    color: #008000;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    padding: 3px 6px;
+  background-color: rgba(0, 128, 0, 0.356);
+  color: #008000;
+}
+
+.modal .task-item input,
+.modal .task-item .text{
+  border: none;
+  width: 100%;
+  outline: none;
 }
 
 .modal .task-more{
@@ -51,16 +48,21 @@
 }
 
 .modal .task-title{
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 400;
   margin-top: 20px;
 }
 
 .modal .task-text{
-    color: rgba(128, 128, 128, 0.568);
-    font-size: 1.1rem;
-    padding-bottom: 6px;
-    margin: 15px 0;
+  margin: 15px 0;
+}
+
+.modal .text-content{
+  color: rgba(128, 128, 128, 0.568);
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-bottom: 6px;
+  margin: 20px 0;
 }
 
 .modal .task-team{

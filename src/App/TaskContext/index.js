@@ -6,9 +6,9 @@ const TaskContext = createContext();
 function TaskProvider({children}){
   
   const [tasks, updateTasks] = useLocalStorage('TODO_V1', []);
+  const [task, setTask] = useState({});
   const [searchValue, setSearchValue] = useState('');
   const [openModalTask, setOpenModalTask] = useState(false); //modal state
-  const [updateTask, setUpdateTask] = useState({});
 
   const taskAllLength = tasks.length; //Total number of tasks
   const tasksCompleted = tasks.filter(task => task.completed).length; //Total number of complete tasks
@@ -38,7 +38,7 @@ function TaskProvider({children}){
 
   const handlerTaskCompleted = (key) => {
     const newTasks = [...tasks];
-    const taskIndex = newTasks.findIndex((task, index) => index === key)
+    const taskIndex = newTasks.findIndex((task) => task.key === key)
     newTasks[taskIndex].completed = !newTasks[taskIndex].completed
     updateTasks(newTasks)
   }
@@ -51,13 +51,12 @@ function TaskProvider({children}){
 
   const handlerAddTask = (key) => {
     const newTasks = [...tasks];
-    const newItem = updateTask;
     const taskIndex = newTasks.findIndex((task) => task.key === key);
 
     if(taskIndex === -1){
-      newTasks.push(newItem);
+      newTasks.push(task);
     }else{
-      newTasks[taskIndex] = newItem;
+      newTasks[taskIndex] = task;
     }
 
     updateTasks(newTasks)
@@ -67,14 +66,14 @@ function TaskProvider({children}){
   const handlerNewTask = () => {
     const keyGenerator = getKeyRandom();
     const newTaskDefault = {key: keyGenerator, title:'', text:'', completed: false};
-    setUpdateTask(newTaskDefault);
+    setTask(newTaskDefault);
     toggleModalTask();
   }
   
   const handlerEditTask = (tasKeyEdit) => {
     const newTasks = [...tasks];
     const updateTaskIndex = newTasks.find((task, index) => index === tasKeyEdit);
-    setUpdateTask(updateTaskIndex);
+    setTask(updateTaskIndex);
     toggleModalTask()
   }
   
@@ -86,8 +85,8 @@ function TaskProvider({children}){
       searchValue,
       searched,
       openModalTask,
-      updateTask,
-      setUpdateTask,
+      task,
+      setTask,
       setSearchValue,
       handlerAddTask,
       handlerDeleteTask,
